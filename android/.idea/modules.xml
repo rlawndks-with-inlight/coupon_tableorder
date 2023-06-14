@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/comagain.iml" filepath="$PROJECT_DIR$/.idea/modules/comagain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/comagain.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/comagain.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/comagain.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/comagain.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/comagain.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/comagain.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/comagain.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/comagain.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-280790609/comagain.invertase_react-native-apple-authentication.iml" filepath="$PROJECT_DIR$/.idea/modules/-280790609/comagain.invertase_react-native-apple-authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-280790609/comagain.invertase_react-native-apple-authentication.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-280790609/comagain.invertase_react-native-apple-authentication.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-280790609/comagain.invertase_react-native-apple-authentication.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-280790609/comagain.invertase_react-native-apple-authentication.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-280790609/comagain.invertase_react-native-apple-authentication.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-280790609/comagain.invertase_react-native-apple-authentication.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1522348543/comagain.kakao-sdk-common.iml" filepath="$PROJECT_DIR$/.idea/modules/1522348543/comagain.kakao-sdk-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1735285690/comagain.lottie-react-native.iml" filepath="$PROJECT_DIR$/.idea/modules/1735285690/comagain.lottie-react-native.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1735285690/comagain.lottie-react-native.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1735285690/comagain.lottie-react-native.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1735285690/comagain.lottie-react-native.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1735285690/comagain.lottie-react-native.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1735285690/comagain.lottie-react-native.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1735285690/comagain.lottie-react-native.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1828793745/comagain.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-1828793745/comagain.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1828793745/comagain.react-native-async-storage_async-storage.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1828793745/comagain.react-native-async-storage_async-storage.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1828793745/comagain.react-native-async-storage_async-storage.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1828793745/comagain.react-native-async-storage_async-storage.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1828793745/comagain.react-native-async-storage_async-storage.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1828793745/comagain.react-native-async-storage_async-storage.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2092505916/comagain.react-native-config.iml" filepath="$PROJECT_DIR$/.idea/modules/2092505916/comagain.react-native-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2092505916/comagain.react-native-config.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/2092505916/comagain.react-native-config.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2092505916/comagain.react-native-config.main.iml" filepath="$PROJECT_DIR$/.idea/modules/2092505916/comagain.react-native-config.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2092505916/comagain.react-native-config.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/2092505916/comagain.react-native-config.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-780554604/comagain.react-native-firebase_analytics.iml" filepath="$PROJECT_DIR$/.idea/modules/-780554604/comagain.react-native-firebase_analytics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-780554604/comagain.react-native-firebase_analytics.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-780554604/comagain.react-native-firebase_analytics.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-780554604/comagain.react-native-firebase_analytics.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-780554604/comagain.react-native-firebase_analytics.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-780554604/comagain.react-native-firebase_analytics.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-780554604/comagain.react-native-firebase_analytics.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-727769937/comagain.react-native-firebase_app.iml" filepath="$PROJECT_DIR$/.idea/modules/-727769937/comagain.react-native-firebase_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-727769937/comagain.react-native-firebase_app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-727769937/comagain.react-native-firebase_app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-727769937/comagain.react-native-firebase_app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-727769937/comagain.react-native-firebase_app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-727769937/comagain.react-native-firebase_app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-727769937/comagain.react-native-firebase_app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-177083374/comagain.react-native-firebase_messaging.iml" filepath="$PROJECT_DIR$/.idea/modules/-177083374/comagain.react-native-firebase_messaging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-177083374/comagain.react-native-firebase_messaging.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-177083374/comagain.react-native-firebase_messaging.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-177083374/comagain.react-native-firebase_messaging.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-177083374/comagain.react-native-firebase_messaging.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-177083374/comagain.react-native-firebase_messaging.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-177083374/comagain.react-native-firebase_messaging.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1694506172/comagain.react-native-push-notification.iml" filepath="$PROJECT_DIR$/.idea/modules/-1694506172/comagain.react-native-push-notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1694506172/comagain.react-native-push-notification.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1694506172/comagain.react-native-push-notification.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1694506172/comagain.react-native-push-notification.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1694506172/comagain.react-native-push-notification.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1694506172/comagain.react-native-push-notification.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1694506172/comagain.react-native-push-notification.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-985054994/comagain.react-native-seoul_kakao-login.iml" filepath="$PROJECT_DIR$/.idea/modules/-985054994/comagain.react-native-seoul_kakao-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-985054994/comagain.react-native-seoul_kakao-login.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-985054994/comagain.react-native-seoul_kakao-login.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-985054994/comagain.react-native-seoul_kakao-login.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-985054994/comagain.react-native-seoul_kakao-login.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-985054994/comagain.react-native-seoul_kakao-login.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-985054994/comagain.react-native-seoul_kakao-login.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-28606326/comagain.react-native-shared-preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/-28606326/comagain.react-native-shared-preferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-28606326/comagain.react-native-shared-preferences.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-28606326/comagain.react-native-shared-preferences.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-28606326/comagain.react-native-shared-preferences.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-28606326/comagain.react-native-shared-preferences.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-28606326/comagain.react-native-shared-preferences.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-28606326/comagain.react-native-shared-preferences.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1086081048/comagain.react-native-splash-screen.iml" filepath="$PROJECT_DIR$/.idea/modules/1086081048/comagain.react-native-splash-screen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1086081048/comagain.react-native-splash-screen.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1086081048/comagain.react-native-splash-screen.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1086081048/comagain.react-native-splash-screen.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1086081048/comagain.react-native-splash-screen.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1086081048/comagain.react-native-splash-screen.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/1086081048/comagain.react-native-splash-screen.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2066215679/comagain.react-native-webview.iml" filepath="$PROJECT_DIR$/.idea/modules/2066215679/comagain.react-native-webview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2066215679/comagain.react-native-webview.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/2066215679/comagain.react-native-webview.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2066215679/comagain.react-native-webview.main.iml" filepath="$PROJECT_DIR$/.idea/modules/2066215679/comagain.react-native-webview.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2066215679/comagain.react-native-webview.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/2066215679/comagain.react-native-webview.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/310365599/react-native-gradle-plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/310365599/react-native-gradle-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/310365599/react-native-gradle-plugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/310365599/react-native-gradle-plugin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/310365599/react-native-gradle-plugin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/310365599/react-native-gradle-plugin.test.iml" />
+    </modules>
+  </component>
+</project>
