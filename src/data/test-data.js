@@ -2,7 +2,7 @@ import testFood from '../assets/images/playstore.png'
 export const test_items = [
     {
         id: 1,
-        category_name: '치킨',
+        category_name: '프라이드 치킨',
         category_img: testFood,
         category_description: '어쩌고저쩌고',
         children: [
@@ -115,45 +115,45 @@ export const test_items = [
             },
         ],
         products: [
-            {
-                id: 10,
-                product_name: '이벤트 후라이드 치킨',
-                product_img: testFood,
-                product_description: '치킨입니다. @!#!@*&#',
-                product_price: 10000,
-                option: []    
-            },
-            {
-                id: 11,
-                product_name: '이벤트 양념 치킨',
-                product_img: testFood,
-                product_description: '치킨입니다. @!#!@*&#',
-                product_price: 10000,
-                option: []    
-            },
-            {
-                id: 12,
-                product_name: '이벤트 스모그 치킨',
-                product_img: testFood,
-                product_description: '치킨입니다. @!#!@*&#',
-                product_price: 10000,
-                option: [
-                    {
-                        id: 1,
-                        option_name: '간장 추가',
-                        option_img: testFood,
-                        option_description: '더 맛있어요. @!#!@*&#',
-                        option_price: 500,    
-                    },
-                    {
-                        id: 2,
-                        option_name: '치킨무 추가',
-                        option_img: testFood,
-                        option_description: '더 맛있어요. @!#!@*&#',
-                        option_price: 1000,    
-                    },
-                ]    
-            },                
+            // {
+            //     id: 10,
+            //     product_name: '이벤트 후라이드 치킨',
+            //     product_img: testFood,
+            //     product_description: '치킨입니다. @!#!@*&#',
+            //     product_price: 10000,
+            //     option: []    
+            // },
+            // {
+            //     id: 11,
+            //     product_name: '이벤트 양념 치킨',
+            //     product_img: testFood,
+            //     product_description: '치킨입니다. @!#!@*&#',
+            //     product_price: 10000,
+            //     option: []    
+            // },
+            // {
+            //     id: 12,
+            //     product_name: '이벤트 스모그 치킨',
+            //     product_img: testFood,
+            //     product_description: '치킨입니다. @!#!@*&#',
+            //     product_price: 10000,
+            //     option: [
+            //         {
+            //             id: 1,
+            //             option_name: '간장 추가',
+            //             option_img: testFood,
+            //             option_description: '더 맛있어요. @!#!@*&#',
+            //             option_price: 500,    
+            //         },
+            //         {
+            //             id: 2,
+            //             option_name: '치킨무 추가',
+            //             option_img: testFood,
+            //             option_description: '더 맛있어요. @!#!@*&#',
+            //             option_price: 1000,    
+            //         },
+            //     ]    
+            // },                
         ]
     },
     {
@@ -226,4 +226,56 @@ export const test_items = [
            
         ]
     },
+]
+
+export const test_call_staff_items = [
+    {
+        id:1,
+        name:'냅킨'
+    },
+    {
+        id:2,
+        name:'물티슈'
+    },
+    {
+        id:3,
+        name:'물리필'
+    },
+    {
+        id:4,
+        name:'얼음'
+    },
+    {
+        id:5,
+        name:'기본안주\n리필'
+    },
+    {
+        id:6,
+        name:'젓가락'
+    },
+    {
+        id:7,
+        name:'앞접시'
+    },
+    {
+        id:8,
+        name:'국그릇'
+    },
+    {
+        id:9,
+        name:'이쑤시개'
+    },
+    {
+        id:10,
+        name:'유아 식기'
+    },
+    {
+        id:11,
+        name:'담요'
+    },
+    {
+        id:12,
+        name:'핸드폰\n충전'
+    },
+
 ]
