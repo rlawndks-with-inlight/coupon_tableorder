@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Col, CallStaffModalContent, Wrappers, themeObj } from "../components/elements";
-import { Image, Text, View, TouchableWithoutFeedback, TouchableHighlight } from "react-native";
+import { Col, CallStaffModal, Wrappers, themeObj, ItemDetailModal } from "../components/elements";
+import { Image, Text, View } from "react-native";
 import SplashScreen from 'react-native-splash-screen';
 import { styled } from "styled-components/native";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -10,6 +10,10 @@ import _ from 'lodash';
 import { test_items } from "../data/test-data";
 import axios from 'axios'
 import { commarNumber, returnMoment } from "../utils/function";
+TouchableOpacity.defaultProps = TouchableOpacity.defaultProps || {};
+TouchableOpacity.defaultProps.delayPressIn = 0;
+import Icon from 'react-native-vector-icons/Feather';
+
 const SideBarContainer = styled.View`
 background:${props => props.theme.main_color};
 flex-direction:column;
@@ -28,7 +32,7 @@ margin: 0 1.5% 0 1.5%;
 `
 
 const Header = styled.View`
-margin:2.3% 2.75% 8px 2.75%;
+padding:2.3% 2.75% 8px 2.75%;
 flex-direction: row;
 `
 const Bottom = styled.View`
@@ -38,10 +42,12 @@ margin:0 2.9%;
 align-items:center;
 `
 const Product = (props) => {
-    const { item, theme } = props;
+    const { item, theme, onClickItem } = props;
     return (
         <>
-            <TouchableOpacity style={{ width: wp('24.45%'), marginRight: wp('1%'), marginLeft: wp('1%'), marginBottom: wp('1%'), alignItems: 'center', flexDirection: 'column' }}>
+            <TouchableOpacity
+                onPress={() => { onClickItem(item) }}
+                style={{ width: wp('24.45%'), marginRight: wp('1%'), marginLeft: wp('1%'), marginBottom: wp('1%'), alignItems: 'center', flexDirection: 'column' }}>
                 <Image
                     source={item?.product_img}
                     style={{ width: wp('24.45%'), height: wp('17.9%'), borderRadius: themeObj.borderRadius }}
@@ -53,7 +59,7 @@ const Product = (props) => {
     )
 }
 
-const returnItemList = (category, theme) => {
+const returnItemList = (category, theme, onClickItem) => {
     return (
         <>
             <View style={{
@@ -62,7 +68,7 @@ const returnItemList = (category, theme) => {
             }}>
                 {(category?.products ?? []).map((item, idx) => (
                     <>
-                        <Product item={item} theme={theme} />
+                        <Product item={item} theme={theme} onClickItem={onClickItem} />
                     </>
                 ))}
             </View>
@@ -76,10 +82,11 @@ const Home = (props) => {
 
     const [data, setData] = useState([]);
     const [theme, setTheme] = useState({
-        main_color: '#00b894', //메인색상
+        main_color: '#be2edd', //메인색상
         font_color: '#222222', //글자색상
         background_color: '#ffffff', // 오른쪽 배경 색상
     });
+    const [mode, setMode] = useState('light')
     const [selectMenuIdx1, setSelectMenuIdx1] = useState(0);
     const [selectMenuIdx2, setSelectMenuIdx2] = useState(0);
 
@@ -90,6 +97,9 @@ const Home = (props) => {
     const handleCloseCallStaffDialog = () => {
         setCallStaffOpen(false);
     }
+
+    const [openModalCategory, setOpenModalCategory] = useState("");
+    const [selectItem, setSelectItem] = useState({});
     useEffect(() => {
 
     }, [])
@@ -157,15 +167,38 @@ const Home = (props) => {
         setSelectMenuIdx2(idx)
         scrollViewRef.current?.scrollTo({ y: contentIndexYObj[`click_${selectMenuIdx1}_${idx}`], animated: false });
     }
+    const onClickItem = (item) => {
+        console.log(item)
+        setSelectItem(item)
+        setOpenModalCategory('item_detail')
+    }
     return (
         <>
             <Wrappers>
-                <CallStaffModalContent
+                <CallStaffModal
                     open={callStaffOpen}
                     handleClose={handleCloseCallStaffDialog}
                     theme={theme}
                     styles={styles}
                 />
+                {openModalCategory == 'item_detail' ?
+                    <>
+                        <ItemDetailModal
+                            open={true}
+                            item={selectItem}
+                            theme={theme}
+                            styles={styles}
+                            handleClose={() => {
+                                console.log(123)
+                                setOpenModalCategory("");
+                                setSelectItem({});
+                            }}
+                        />
+                    </>
+                    :
+                    <>
+                    </>}
+
                 <SideBarContainer theme={theme} style={{
                     width: wp('18%')
                 }}>
@@ -173,11 +206,12 @@ const Home = (props) => {
                     <MenuContainer showsVerticalScrollIndicator={false}>
                         {data.map((item, idx) => (
                             <>
-                                <TouchableWithoutFeedback
+                                <TouchableOpacity
+                                    delayPressIn={0}
                                     style={{
                                         marginTop: 4,
                                         marginBottom: 4,
-                                    }} key={item.name} onPress={() => onClickIdx1(idx)}>
+                                    }} key={item.name} onPressIn={() => onClickIdx1(idx)}>
                                     <MenuText style={{
                                         backgroundColor: `${idx == selectMenuIdx1 ? theme.background_color : theme.main_color}`,
                                     }}>
@@ -187,7 +221,7 @@ const Home = (props) => {
                                             fontSize: themeObj.font.size3
                                         }}>{item.category_name}</Text>
                                     </MenuText>
-                                </TouchableWithoutFeedback>
+                                </TouchableOpacity>
                             </>
                         ))}
                     </MenuContainer>
@@ -195,7 +229,7 @@ const Home = (props) => {
                         style={{
                             ...styles.call_staff_button
                         }}
-                        onPress={() => {
+                        delayPressIn={0} onPressIn={() => {
                             setCallStaffOpen(true);
                         }}
                     >
@@ -208,7 +242,9 @@ const Home = (props) => {
                     </TouchableOpacity>
                 </SideBarContainer>
                 <View style={{ ...styles.container, flexDirection: 'column', backgroundColor: theme.background_color }}>
-                    <Header>
+                    <Header style={{
+                        alignItems: 'center'
+                    }}>
                         {data.map((category_1, index1) => (
                             <>
                                 {selectMenuIdx1 == index1 ?
@@ -220,14 +256,14 @@ const Home = (props) => {
                                                     ...styles.top_menu,
                                                     borderBottomColor: `${selectMenuIdx2 == index_2 ? theme.main_color : theme.background_color}`,
                                                 }}
-                                                    onPress={() => { onClickIdx2(index_2) }}
+                                                    delayPressIn={0} onPressIn={() => { onClickIdx2(index_2) }}
                                                 >
                                                     <Text style={{
                                                         color: `${selectMenuIdx2 == index_2 ? theme.main_color : '#ababab'}`,
                                                         fontSize: themeObj.font.size3,
                                                         fontWeight: 'bold'
                                                     }}>{category_2.category_name}</Text>
-                                                </TouchableOpacity >
+                                                </TouchableOpacity>
                                             </>
                                         ))}
                                     </>
@@ -238,6 +274,25 @@ const Home = (props) => {
 
                             </>
                         ))}
+                        <View style={{
+                            marginLeft: 'auto',
+                            marginBottom: 4
+                        }}>
+                            <TouchableOpacity
+                                onPressIn={() => {
+                                    if (mode == 'light') {
+                                        setMode('dark')
+                                        setTheme({ ...theme, ['background_color']: '#222', ['font_color']: '#fff' })
+                                    } else {
+                                        setMode('light')
+                                        setTheme({ ...theme, ['background_color']: '#fff', ['font_color']: '#000' })
+                                    }
+                                }}
+                            >
+                                <Icon name={mode == 'dark' ? 'moon' : 'sun'} size={30} color={theme.font_color} />
+                            </TouchableOpacity>
+                        </View>
+
                     </Header>
                     <Container
                         showsVerticalScrollIndicator={false}
@@ -247,14 +302,14 @@ const Home = (props) => {
                         {data.map((category_1, index_1) => (
                             <>
                                 <View onLayout={handleLayout(index_1, -1)} />
-                                {returnItemList(category_1, theme)}
+                                {returnItemList(category_1, theme, onClickItem)}
                                 {category_1?.children && category_1?.children.map((category_2, index_2) => (
                                     <>
                                         <View onLayout={handleLayout(index_1, index_2)} />
-                                        {returnItemList(category_2, theme)}
+                                        {returnItemList(category_2, theme, onClickItem)}
                                         {category_2?.children && category_2?.children.map((category_3, index_3) => (
                                             <>
-                                                {returnItemList(category_3, theme)}
+                                                {returnItemList(category_3, theme, onClickItem)}
                                             </>
                                         ))}
                                     </>
@@ -272,7 +327,7 @@ const Home = (props) => {
                                 backgroundColor: theme.main_color,
                                 marginRight: 0
                             }}
-                            onPress={() => {
+                            delayPressIn={0} onPressIn={() => {
 
                             }}
                         >
@@ -288,7 +343,7 @@ const Home = (props) => {
                                 ...styles.color_button,
                                 backgroundColor: theme.main_color,
                             }}
-                            onPress={() => {
+                            delayPressIn={0} onPressIn={() => {
 
                             }}
                         >

@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Dimensions, Text, View, ScrollView } from 'react-native';
+import { Dimensions, Text, View, ScrollView, Image, } from 'react-native';
 const { width, height } = Dimensions.get('window');
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/Fontisto';
@@ -7,6 +7,10 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { test_call_staff_items } from "../data/test-data";
 import { useEffect, useRef, useState } from "react";
 import _ from 'lodash';
+TouchableOpacity.defaultProps = TouchableOpacity.defaultProps || {};
+TouchableOpacity.defaultProps.delayPressIn = 0;
+import Modal from "react-native-modal";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export const Wrappers = styled.View`
 flex:1;
@@ -45,7 +49,7 @@ top: 0;
 left: 0;
 `
 const CallStaffItem = (props) => {
-    const { item, theme, onPress, selectCallList } = props;
+    const { item, theme, onPressIn, selectCallList } = props;
     return (
         <>
             <TouchableOpacity style={{
@@ -57,8 +61,8 @@ const CallStaffItem = (props) => {
                 justifyContent: 'center',
                 borderColor: `${_.findIndex(selectCallList, item) >= 0 ? theme.main_color : '#ababab'}`
             }}
-                onPress={() => {
-                    onPress(item)
+                delayPressIn={0} onPressIn={() => {
+                    onPressIn(item)
                 }}
             >
                 <Text style={{
@@ -108,7 +112,7 @@ const CallStaffOrderItem = (props) => {
                         paddingRight: 3,
                         borderRadius: 4
                     }}
-                        onPress={() => {
+                        delayPressIn={0} onPressIn={() => {
                             onCallStaffOrderCal(item, 0)
                         }}>
                         <Text style={{
@@ -122,7 +126,7 @@ const CallStaffOrderItem = (props) => {
                     alignItems: 'center',
                 }}>
                     <TouchableOpacity style={carculButton}
-                        onPress={() => {
+                        delayPressIn={0} onPressIn={() => {
                             onCallStaffOrderCal(item, item?.count - 1)
                         }}>
                         <Icon name="minus-a" size={20} color={theme.background_color} />
@@ -132,7 +136,7 @@ const CallStaffOrderItem = (props) => {
                         color: theme.font_color
                     }}>{item.count}개</Text>
                     <TouchableOpacity style={carculButton}
-                        onPress={() => {
+                        delayPressIn={0} onPressIn={() => {
                             onCallStaffOrderCal(item, item?.count + 1)
                         }}>
                         <Icon name="plus-a" size={20} color={theme.background_color} />
@@ -142,7 +146,7 @@ const CallStaffOrderItem = (props) => {
         </>
     )
 }
-export const CallStaffModalContent = (props) => {
+export const CallStaffModal = (props) => {
     const { data, open, handleClose, theme, styles } = props;
 
     const callStaffOrderItem = useRef();
@@ -194,7 +198,7 @@ export const CallStaffModalContent = (props) => {
                             paddingBottom: wp('1.25%'),
                             justifyContent: 'space-between',
                             borderBottomColor: `#ababab`,
-                            borderBottomWidth: 2,
+                            borderBottomWidth: 1,
                         }}>
                             <View style={{
                                 display: 'flex',
@@ -215,7 +219,7 @@ export const CallStaffModalContent = (props) => {
                                 flexDirection: 'row',
                                 alignItems: 'center',
                             }}
-                                onPress={handleClose}
+                                delayPressIn={0} onPressIn={handleClose}
                             >
                                 <Text style={{
                                     color: theme.font_color,
@@ -237,7 +241,7 @@ export const CallStaffModalContent = (props) => {
                                 }}>
                                     {test_call_staff_items.map((item, idx) => (
                                         <>
-                                            <CallStaffItem item={item} theme={theme} onPress={onClickCallMenu} selectCallList={selectCallList} />
+                                            <CallStaffItem item={item} theme={theme} delayPressIn={0} onPressIn={onClickCallMenu} selectCallList={selectCallList} />
                                         </>
                                     ))}
                                 </View>
@@ -271,7 +275,7 @@ export const CallStaffModalContent = (props) => {
                                         marginRight: 0,
                                         marginBottom: 12,
                                     }}
-                                    onPress={() => {
+                                    delayPressIn={0} onPressIn={() => {
 
                                     }}
                                 >
@@ -289,6 +293,161 @@ export const CallStaffModalContent = (props) => {
                 :
                 <>
                 </>}
+        </>
+    )
+}
+export const ItemDetailModal = (props) => {
+    const { item, open, handleClose, theme, styles } = props;
+
+    return (
+        <>
+            {open ?
+                <>
+                    <View style={{
+                        position: 'absolute',
+                        backgroundColor: 'red',
+                        top: 0,
+                        width: wp('100%'),
+                        height: hp('109%'),
+                    }} />
+                    <ModalContainer style={{
+                        width: wp('97%'),
+                        flex: 1,
+                        height: hp('100%'),
+                        backgroundColor: theme?.background_color,
+                        left: wp('1.5%'),
+                        top: wp('4%'),
+                        borderRadius: themeObj.borderRadius
+                    }}>
+                        <View style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            paddingLeft: wp('2.5%'),
+                            paddingTop: wp('2.5%'),
+                            paddingRight: wp('2.5%'),
+                            paddingBottom: wp('1.25%'),
+                            justifyContent: 'space-between',
+                            borderBottomColor: `#ababab`,
+                            borderBottomWidth: 1,
+                        }}>
+                            <View style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                            }} />
+                            <TouchableOpacity style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                            }}
+                                delayPressIn={0} onPressIn={handleClose}
+                            >
+                                <Text style={{
+                                    color: theme.font_color,
+                                    fontSize: themeObj.font.size1, marginRight: 4
+                                }}>닫기</Text>
+                                <Icon name="close-a" size={30} color={theme.font_color} />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{
+                            padding: wp('2.5%'),
+                            flex: 1,
+                            display: 'flex',
+                            flexDirection: 'row',
+                        }}>
+                            <Image
+                                source={item?.product_img}
+                                style={{ width: wp('48.9%'), height: wp('35.8%'), borderRadius: themeObj.borderRadius }}
+                            />
+                            <View style={{
+                                width: wp('38%'),
+                                marginLeft: 'auto',
+                                flexDirection: 'column',
+                                display:'flex'
+                            }}>
+                                <Text style={{
+                                    color: theme.font_color,
+                                    fontSize: themeObj.font.size1
+                                }}>{item?.product_name}</Text>
+                                <Text style={{
+                                    color: theme.font_color,
+                                    fontSize: themeObj.font.size3,
+                                    marginTop: 8,
+                                }}>{item?.product_description}</Text>
+                                <TouchableOpacity
+                                    style={{
+                                        ...styles.color_button,
+                                        width: '100%',
+                                        backgroundColor: theme.main_color,
+                                        marginRight: 0,
+                                        marginTop: wp('30%'),
+                                    }}
+                                    delayPressIn={0} onPressIn={() => {
+
+                                    }}
+                                >
+                                    <Text style={{
+                                        color: '#fff',
+                                        fontWeight: 'bold',
+                                        textAlign: 'center',
+                                        fontSize: themeObj.font.size4
+                                    }}>장바구니 담기</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </ModalContainer>
+                </>
+                :
+                <>
+                </>}
+
+        </>
+    )
+}
+const AlmostFullModal = (props) => {
+    const { data, open, handleClose, theme, styles, children } = props;
+    return (
+        <>
+            <Modal
+                isVisible={open}
+                style={{ flex: 1, justifyContent: "center", alignItems: "center", position: 'relative' }}
+                statusBarTranslucent={true} statusBarColor="transparent"
+                deviceHeight={hp('109%')}
+                onRequestClose={handleClose}
+                onBackdropPress={handleClose}
+            >
+                <View style={{
+                    marginTop: wp('5%'),
+                    marginBottom: wp('0.5%'),
+                    width: wp('98%'),
+                    alignItems: 'flex-end'
+                }}>
+                    <TouchableOpacity style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                    }}
+                        delayPressIn={0} onPressIn={handleClose}
+                    >
+                        <Text style={{
+                            color: theme.font_color,
+                            fontSize: themeObj.font.size1, marginRight: 4
+                        }}>닫기</Text>
+                        <Icon name="close-a" size={30} color={theme.font_color} />
+                    </TouchableOpacity>
+                </View>
+                <View style={{
+                    backgroundColor: '#fff',
+                    width: wp('98%'),
+                    height: hp('92%'),
+                    padding: wp('2%'),
+                    borderRadius: themeObj.borderRadius,
+                    position: 'relative'
+                }}>
+
+                    {children}
+                </View>
+            </Modal>
         </>
     )
 }
